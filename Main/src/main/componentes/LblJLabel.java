@@ -7,7 +7,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 
 public class LblJLabel extends JLabel {
-    private Dimension tamanhoPreferido = new Dimension(50,50);
+    private Dimension tamanhoPreferido = new Dimension(180,50);
     private Dimension tamanhoMaximo = new Dimension(100,100);
     private Font fonte = new Font("Default", Font.PLAIN, 20);
 

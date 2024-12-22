@@ -10,5 +10,4 @@ public class Main {
         JFrameTelaInserirDados telaInserirDados = new JFrameTelaInserirDados();
         telaInserirDados.setVisible(true);
     }
-    
 }
