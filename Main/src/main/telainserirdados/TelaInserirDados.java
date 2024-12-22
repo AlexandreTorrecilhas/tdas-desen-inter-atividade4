@@ -12,7 +12,9 @@ public class TelaInserirDados extends JFrame {
     
     public TelaInserirDados(){
         setCoordenadasXY();
-        
+        this.setSize(tamanhoJFrame);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocation(coordenadasXY[0], coordenadasXY[1]);
     }
     
     private void setCoordenadasXY(){

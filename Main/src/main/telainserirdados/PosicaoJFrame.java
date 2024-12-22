@@ -12,13 +12,13 @@ public class PosicaoJFrame {
     Dimension tamanhoJFrame;
     Integer[] coordenadasXY = new Integer[2];
     
-    public PosicaoJFrame(Dimension telaAtual){
-        Dimension tamanhoMonitor = telaAtual.getSize();
+    public PosicaoJFrame(Dimension tamanhoJFrame){
+        this.tamanhoJFrame = tamanhoJFrame.getSize();
     }
     
     private void setCoordenadasXY(){
         this.coordenadasXY[0] = (int)(this.tamanhoMonitor.width - this.tamanhoJFrame.getWidth()) / 2;
-        this.coordenadasXY[1] = (int) (this.tamanhoMonitor.height - this.tamanhoJFrame.getHeight() / 2);
+        this.coordenadasXY[1] = (int) (this.tamanhoMonitor.height - this.tamanhoJFrame.getHeight()) / 2;
     }
     
     public Integer[] getCoordenadasXY(){
