@@ -3,8 +3,9 @@ package main.telainserirdados;
 //Pacotes do Projeto
 import main.componentes.LblJLabel;
 import main.componentes.TxtJTextField;
-//Pacotes do Projeto
 import main.telainserirdados.abstrato.AbsJPanel;
+//Pacotes AWT
+import java.awt.event.KeyEvent;
 //Pacotes Time
 import java.time.LocalDate;
 
@@ -32,6 +33,11 @@ class JPanelData extends AbsJPanel {
         this.add(this.txtMes, this.getGbc(1,1));
         this.add(this.lblAno, this.getGbc(0,2));
         this.add(this.txtAno, this.getGbc(1,2));
+    }
+
+    @Override
+    public void configurarEventoTecla(){
+
     }
 
     public TxtJTextField getTxtDia() {

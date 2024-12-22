@@ -7,6 +7,7 @@ import main.componentes.TxtJTextField;
 //Pacotes Swing
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import java.awt.event.KeyEvent;
 
 public class JPanelInserirPressao extends AbsJPanel {
 
@@ -28,6 +29,11 @@ public class JPanelInserirPressao extends AbsJPanel {
         this.add(txtDiatolica, this.getGbc(1,1));
         this.add(this.chkEstado, this.getGbc(0,3));
         this.add(this.btnAdicionar, this.getGbc(0,4));
+    }
+
+    @Override
+    public void configurarEventoTecla(){
+        this.btnAdicionar.setMnemonic(KeyEvent.VK_D);
     }
 
     public TxtJTextField getTxtSistolica() {

@@ -16,6 +16,8 @@ public abstract class AbsJPanel extends JPanel {
 
     public abstract void addComponentes();
 
+    public abstract void configurarEventoTecla();
+
     protected GridBagConstraints getGbc(int coluna, int linha){
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = coluna;
