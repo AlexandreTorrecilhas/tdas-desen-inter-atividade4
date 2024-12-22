@@ -1,13 +1,13 @@
 package main;
 
 //Pacotes do Projeto
-import main.telainserirdados.TelaInserirDados;
+import main.telainserirdados.JFrameTelaInserirDados;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        TelaInserirDados telaInserirDados = new TelaInserirDados();
+        JFrameTelaInserirDados telaInserirDados = new JFrameTelaInserirDados();
         telaInserirDados.setVisible(true);
     }
     
