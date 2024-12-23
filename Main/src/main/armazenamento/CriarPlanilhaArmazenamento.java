@@ -22,8 +22,8 @@ public class CriarPlanilhaArmazenamento {
         try{
             if(this.dadosLeitura.createNewFile()){
 
-                FileWriter escrever = new FileWriter(this.dadosLeitura);
-                escrever.write("Data da leitura,Pressão Sistótilica,Pressão Distólica,Estava estressado");
+                FileWriter escrever = new FileWriter(this.dadosLeitura, true);
+                escrever.write("Data da leitura,Pressao Sistolica,Pressao Distolica,Estava estressado");
                 escrever.close();
                 JOptionPane.showMessageDialog(null, "Arquivo criado");
             }
