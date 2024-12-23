@@ -15,6 +15,7 @@ public class Leitura {
     int pressaoSistolica;
     int pressaoDistolica;
     boolean estaEstressado;
+    boolean objetoCriado;
 
     public Leitura(String dataLeitura, int pressaoSistolica, int pressaoDistolica, boolean estaEstressado){
         try{
@@ -24,13 +25,23 @@ public class Leitura {
             this.estaEstressado = estaEstressado;
         }catch(DateTimeParseException dateErro){
             System.out.println(dateErro);
-        }finally{
-            JOptionPane.showMessageDialog(null, "Por favor, verificar a data informada");
+            JOptionPane.showMessageDialog(null,"Por favor, verificar os valores inseridos nos campos de data");
+        }
+    }
+
+    protected void criarObjeto(String dataLeitura, int pressaoSistolica, int pressaoDistolica, boolean estaEstressado){
+        try{
+            this.dataLeitura = LocalDate.parse(dataLeitura, this.dataModelo);
+            this.pressaoSistolica = pressaoSistolica;
+            this.pressaoDistolica = pressaoDistolica;
+            this.estaEstressado = estaEstressado;
+        }catch(DateTimeParseException dateErro){
+            System.out.println(dateErro);
+            JOptionPane.showMessageDialog(null,"Por favor, verificar os valores inseridos nos campos de data");
         }
     }
 
     public String getDataLeitura() {
-
         return dataLeitura.toString();
     }
 

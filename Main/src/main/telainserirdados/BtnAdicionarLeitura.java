@@ -3,6 +3,7 @@ package main.telainserirdados;
 //Pacotes do Projeto
 import main.armazenamento.*;
 //Pacotes AWT
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,14 +22,34 @@ class BtnAdicionarLeitura implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         this.dadosInserir = criarLeitura();
-        this.armazenamento = criarArmazenamento(this.dadosInserir);
-        this.armazenamento.adicionarLeitura();
+
+        if(!(dadosInserir == null)){
+            this.armazenamento = criarArmazenamento(this.dadosInserir);
+            this.armazenamento.adicionarLeitura();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos antes de enviar os dados");
+            return;
+        }
+
+
     }
 
     protected Leitura criarLeitura(){
+
+        Leitura dados;
         String dataLeitura = String.format("%s/%s/%s", jPanelData.getTxtDia(), jPanelData.getTxtMes(), jPanelData.getTxtAno());
-        Leitura dados = new Leitura(dataLeitura,jPanelInserirPressao.getTxtSistolica(),jPanelInserirPressao.getTxtDiatolica(),jPanelInserirPressao.getChkEstado());
-        System.out.println("Variavel dataLeitura: " + dataLeitura);
+        String sistolica = jPanelInserirPressao.getTxtSistolica();
+        String distolica = jPanelInserirPressao.getTxtDiatolica();
+
+        if(!dataLeitura.isEmpty() && !sistolica.isEmpty() && !distolica.isEmpty()){
+            dados = new Leitura(dataLeitura,Integer.parseInt(jPanelInserirPressao.getTxtSistolica()),Integer.parseInt(jPanelInserirPressao.getTxtDiatolica()),jPanelInserirPressao.getChkEstado());
+            System.out.println("Variavel dataLeitura: " + dataLeitura);
+        }
+        else{
+            dados = null;
+        }
+
         return dados;
     }
 
