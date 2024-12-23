@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 
 public class Leitura {
 
-    DateTimeFormatter dataModelo = DateTimeFormatter.ofPattern("DD/MM/YYYY");
+    DateTimeFormatter dataModelo = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     LocalDate dataLeitura;
     int pressaoSistolica;

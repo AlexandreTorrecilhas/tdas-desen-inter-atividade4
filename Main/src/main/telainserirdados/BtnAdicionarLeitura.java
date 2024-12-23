@@ -26,8 +26,9 @@ class BtnAdicionarLeitura implements ActionListener {
     }
 
     protected Leitura criarLeitura(){
-        String dataLeitura = String.format("%s,/,%s,/,%s", jPanelData.getTxtDia(), jPanelData.getTxtMes(), jPanelData.getTxtAno());
+        String dataLeitura = String.format("%s/%s/%s", jPanelData.getTxtDia(), jPanelData.getTxtMes(), jPanelData.getTxtAno());
         Leitura dados = new Leitura(dataLeitura,jPanelInserirPressao.getTxtSistolica(),jPanelInserirPressao.getTxtDiatolica(),jPanelInserirPressao.getChkEstado());
+        System.out.println("Variavel dataLeitura: " + dataLeitura);
         return dados;
     }
 

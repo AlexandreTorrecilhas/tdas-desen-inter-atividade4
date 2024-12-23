@@ -22,10 +22,10 @@ public class CriarPlanilhaArmazenamento {
         try{
             if(this.dadosLeitura.createNewFile()){
 
-                JOptionPane.showMessageDialog(null, "Arquivo criado");
-                FileWriter escrever = new FileWriter(dadosLeitura);
-                escrever.append("Data da leitura,Pressão Sistótilica,Pressão Distólica,Estava estressado");
+                FileWriter escrever = new FileWriter(this.dadosLeitura);
+                escrever.write("Data da leitura,Pressão Sistótilica,Pressão Distólica,Estava estressado");
                 escrever.close();
+                JOptionPane.showMessageDialog(null, "Arquivo criado");
             }
             else{
                 return;
@@ -37,9 +37,9 @@ public class CriarPlanilhaArmazenamento {
 
     public void adicionarLeitura(){
         try{
-            FileWriter escrever = new FileWriter(this.dadosLeitura);
-            escrever.append(String.format("%s,%s,%s,%s\n", this.leitura.getDataLeitura(), this.leitura.getPressaoSistolica(), this.leitura.getPressaoDistolica(), this.leitura.getEstaEstressado()));
-            JOptionPane.showMessageDialog(null, "Valor Inserido com sucesso");
+            FileWriter escrever = new FileWriter(this.dadosLeitura, true);
+            escrever.write(String.format("%s,%s,%s,%s\n", this.leitura.getDataLeitura(), this.leitura.getPressaoSistolica(), this.leitura.getPressaoDistolica(), this.leitura.getEstaEstressado()));
+            escrever.close();
             JOptionPane.showMessageDialog(null, "Valor Inserido com sucesso");
         }catch(IOException erroInserirLinha){
             JOptionPane.showMessageDialog(null, "Não consegui escrever os valores" + erroInserirLinha.getMessage());
