@@ -36,16 +36,16 @@ public class JPanelInserirPressao extends AbsJPanel {
         this.btnAdicionar.setMnemonic(KeyEvent.VK_D);
     }
 
-    public TxtJTextField getTxtSistolica() {
-        return txtSistolica;
+    public int getTxtSistolica() {
+        return Integer.parseInt(txtSistolica.getText());
     }
 
-    public TxtJTextField getTxtDiatolica() {
-        return txtDiatolica;
+    public int getTxtDiatolica() {
+        return Integer.parseInt(txtDiatolica.getText());
     }
 
-    public JCheckBox getChkEstado() {
-        return chkEstado;
+    public boolean getChkEstado() {
+        return chkEstado.isSelected();
     }
 
     public JButton getBtnAdicionar() {

@@ -35,7 +35,7 @@ public class CriarPlanilhaArmazenamento {
         }
     }
 
-    protected void adicionarLeitura(){
+    public void adicionarLeitura(){
         try{
             FileWriter escrever = new FileWriter(this.dadosLeitura);
             escrever.append(String.format("%s,%s,%s,%s\n", this.leitura.getDataLeitura(), this.leitura.getPressaoSistolica(), this.leitura.getPressaoDistolica(), this.leitura.getEstaEstressado()));

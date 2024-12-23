@@ -40,15 +40,15 @@ class JPanelData extends AbsJPanel {
 
     }
 
-    public TxtJTextField getTxtDia() {
-        return txtDia;
+    public String getTxtDia() {
+        return txtDia.getText();
     }
 
-    public TxtJTextField getTxtMes() {
-        return txtMes;
+    public String getTxtMes() {
+        return txtMes.getText();
     }
 
-    public TxtJTextField getTxtAno() {
-        return txtAno;
+    public String getTxtAno() {
+        return txtAno.getText();
     }
 }
