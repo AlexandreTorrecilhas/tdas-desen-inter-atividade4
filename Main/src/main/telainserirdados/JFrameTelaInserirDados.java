@@ -21,6 +21,7 @@ public class JFrameTelaInserirDados extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocation(coordenadasXY[0], coordenadasXY[1]);
         addComponentes();
+        addActionListener();
     }
 
     private void addComponentes(){
